@@ -110,7 +110,7 @@ hireMeElement.addEventListener('click', function () {
     removeBackSection();
 })
 
-/*==================== Scrolling functionality to Navigate each nav link ==================== */
+/*====================Smooth Scrolling functionality to Navigate each nav link ==================== */
 
 for (let i = 0; i < navElement.length; i++) {
     (navElement[i]).addEventListener('click', (event) => {
@@ -136,4 +136,71 @@ for (let i = 0; i < navElement.length; i++) {
             window.scrollBy(0, 50)
         }, 50)
     })
+}
+
+
+/*==================== Skill Bar Animation ==================== */
+
+// Select all elements with class 'progress' and find their child div elements
+const progressBar = document.querySelectorAll('.progress>div');
+
+// Event listener for scroll event, triggers the checkScroll function
+window.addEventListener('scroll', checkScroll);
+
+// Initialize progress bars
+function initialiseBars() {
+    for (let bar of progressBar) {
+        // Set initial width of each progress bar to 0%
+        bar.style.width = 0 + "%";
+    }
+}
+
+// Function to set target width for each progress bar and start filling it
+function targetWidthFxn(bar) {
+    let targetWidth = bar.getAttribute('data-bar-width');
+    fillBar(bar, targetWidth);
+}
+
+// Call the initializeBars function to set initial width of progress bars
+initialiseBars();
+
+// Function to fill a progress bar to a target width
+function fillBar(bar, targetWidth) {
+    let currentWidth = 0;
+    let duration = 1000; // Duration of the animation in milliseconds
+    let intervalDuration = 10; // Duration between each step in the animation in milliseconds
+    let increment = targetWidth / (duration / intervalDuration);
+
+    // Set interval to increase the width of the progress bar gradually
+    let interval = setInterval(function () {
+        if (currentWidth > targetWidth) {
+            clearInterval(interval); // Stop the interval when target width is reached
+            return;
+        }
+        currentWidth += increment;
+        bar.style.width = currentWidth + "%"; // Set the width of the progress bar
+    }, intervalDuration);
+}
+
+// Function to check if a progress bar is within the viewport
+function isAnimated(bar) {
+    const coordinate = bar.getBoundingClientRect();
+    return (
+        coordinate.top >= 0 &&
+        coordinate.left >= 0 &&
+        coordinate.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        coordinate.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to check scroll event and fill progress bars when they come into view
+function checkScroll() {
+    progressBar.forEach((bar) => {
+        if (isAnimated(bar) && !bar.classList.contains("animated")) {
+            targetWidthFxn(bar); // Call function to set target width and start filling the progress bar
+            bar.classList.add("animated"); // Add 'animated' class to indicate that the progress bar has been animated
+        } else if (!isAnimated(bar)) {
+            bar.classList.remove('animated'); // Remove 'animated' class if progress bar is out of view
+        }
+    });
 }
