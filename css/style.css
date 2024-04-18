@@ -497,3 +497,75 @@ h3.my-profession {
   color: var(--text-black-700);
   text-transform: capitalize;
 }
+
+/* Services */
+
+.service .container {
+  padding-bottom: 40px;
+}
+
+.service .service-item {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  margin-bottom: 30px;
+  /* min-height: 500px; */
+}
+
+.service .service-item .service-item-inner {
+  /* max-height: 315px; */
+  min-height: 315px;
+  /* overflow: hidden; */
+  background-color: var(--bg-black-100);
+  border: 1px solid var(--skin-color);
+  border-radius: 10px;
+  padding: 30px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover,
+.contact .contact-info-item .contact-info-inner-item:hover,
+.portfolio .portfolio-item .portfolio-item-inner:hover {
+  box-shadow: -1px 1px 10px var(--skin-color);
+  /* box-shadow: -6px 15px 30px rgba(48, 46, 77, 0.15); */
+}
+
+.service .service-item .service-item-inner .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner .icon .fa {
+  font-size: 40px;
+  line-height: 60px;
+  color: var(--skin-color);
+  transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover .icon {
+  background-color: var(--skin-color);
+}
+
+.service .service-item .service-item-inner:hover .icon .fa {
+  font-size: 26px;
+  color: #fff;
+}
+
+.service .service-item .service-item-inner h4 {
+  font-size: 20px;
+  color: var(--text-black-900);
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.service .service-item .service-item-inner p {
+  text-align: justify;
+  color: var(--text-black-700);
+  font-size: 16px;
+  line-height: 25px;
+}
