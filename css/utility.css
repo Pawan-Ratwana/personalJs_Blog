@@ -112,3 +112,23 @@ ul {
 .shadow-dark {
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
+
+/* scoll line  */
+
+::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(
+    --skin-color
+  ); /* Set the color of the thumb (the draggable part) */
+  border-radius: 6px; /* Set the border radius of the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(
+    --bg-black-100
+  ); /* Set the color of the track (the area the thumb moves along) */
+  border-radius: 6px; /* Set the border radius of the track */
+}
