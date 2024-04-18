@@ -16,12 +16,31 @@ const totalNavList = navList.length;
 const menuToggle = document.getElementById('menu-toggle');
 const toggleButton = document.querySelector('.toggle-button');
 
+/*==================== Toggle Button ==================== */
+
 // Toggle aside and toggle button when menu toggle button is clicked
 menuToggle.addEventListener('click', () => {
     toggleButton.classList.toggle('active');
     aside.classList.toggle('active');
     toggleButton.classList.toggle('tagActive');
 });
+
+// Remove active class from aside and toggle button when clicking outside of aside
+document.querySelector('.main-content').addEventListener('click', () => {
+    aside.classList.remove('active')
+    toggleButton.classList.remove('active')
+})
+
+
+// Remove active class from aside and toggle button when scrolling outside of aside
+window.addEventListener('scroll', () => {
+    if (aside.classList.contains('active')) {
+        aside.classList.remove('active')
+        toggleButton.classList.remove('active');
+    }
+})
+
+/*==================== Navigate to nav link ==================== */
 
 // Add click event listener to each navigation link
 for (let i = 0; i <= totalNavList - 1; i++) {
