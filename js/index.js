@@ -7,4 +7,14 @@ var typed = new Typed(".typing", {
     loop: true
 });
 
-console.log("Jai Shree Ram")
+// Get the aside element and navigation links
+const aside = document.getElementById('aside');
+const menuToggle = document.getElementById('menu-toggle');
+const toggleButton = document.querySelector('.toggle-button');
+
+// Toggle aside and toggle button when menu toggle button is clicked
+menuToggle.addEventListener('click', () => {
+    toggleButton.classList.toggle('active');
+    aside.classList.toggle('active');
+    toggleButton.classList.toggle('tagActive');
+});

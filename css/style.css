@@ -812,3 +812,20 @@ h3.my-profession {
   height: 50px;
   padding: 0 50px;
 }
+
+/* style for toggle button */
+.toggle-button #menu-toggle {
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  top: 0;
+  left: 15px;
+  opacity: 0;
+  visibility: hidden;
+  /* background-color: var(--bg-black-100); */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
