@@ -829,3 +829,217 @@ h3.my-profession {
   align-items: center;
   transition: all 0.5s ease;
 }
+
+/* responsive style */
+@media screen and (max-width: 1240px) {
+  .about .about-content .personal-info .info-item p span {
+    display: block;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1065px) {
+  .about .about-content .timeline-box .timeline .timeline-title {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main-container {
+    margin-left: 0;
+  }
+  .aside {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .aside.active {
+    width: calc(100%- (100%-270px));
+    height: 60vh;
+    padding: 15px 10px 10px 25px;
+    opacity: 1;
+    visibility: visible;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    align-items: normal;
+    /* background-color: #686666; */
+    box-shadow: -1px 1px 10px var(--skin-color);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .aside.active .nav {
+    /* margin-top: 152px; */
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aside.active .logo {
+    padding-bottom: 10px;
+    border-bottom: 0.1px solid var(--bg-black-50);
+  }
+
+  .aside.active .logo a {
+    /* background-color: red; */
+    padding: 5px 10px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    /* padding: 15px 20px;
+      font-size: 30px;
+      letter-spacing: 5px; */
+  }
+
+  .aside.active .logo a span {
+    font-size: 30px;
+  }
+
+  .toggle-button #menu-toggle {
+    opacity: 10;
+    visibility: visible;
+    transition: all 0.5s ease;
+  }
+
+  .toggle-button #menu-toggle::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-black-900);
+    transform: rotateY(-10px);
+    box-shadow: 0 5px var(--text-black-900);
+    transition: all 0.5s;
+  }
+
+  .toggle-button #menu-toggle::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-black-900);
+    transform: translateY(10px);
+    transition: all 0.5s;
+  }
+
+  .toggle-button.active #menu-toggle {
+    position: fixed;
+    left: 245px;
+    top: 25px;
+    z-index: 199;
+    /* background: var(--bg-black-100); */
+    transition: all 0.5s;
+  }
+  .toggle-button.active #menu-toggle::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 var(--text-black-900);
+  }
+
+  .toggle-button.active #menu-toggle::after {
+    transform: translateY(0px) rotate(-45deg);
+  }
+  .home .home-info {
+    /* margin-top: -9px; */
+  }
+}
+@media screen and (max-width: 875px) {
+  .home .home-info {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .home .home-img {
+    /* display: none; */
+    margin-top: 70px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .home .home-img img {
+    width: 90%;
+    height: 100%;
+  }
+
+  .about .about-content .timeline-box .timeline .timeline-title {
+    font-size: 20px;
+  }
+
+  .about .about-content .personal-info,
+  .about .about-content .skills,
+  .about .about-content .education,
+  .about .about-content .experience {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .service .service-item,
+  .portfolio .portfolio-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 605px) {
+  .service .service-item,
+  .portfolio .portfolio-item,
+  .contact .contact-form .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .contact .contact-info-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .padd-15 {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+  h3.hello {
+    font-size: 20px;
+  }
+  h3.hello span {
+    font-size: 20px;
+  }
+
+  .home-info p {
+    font-size: 16px;
+  }
+
+  .about .about-content .timeline-box .timeline .fa,
+  .about .about-content .timeline-box .timeline .timeline-date {
+    font-size: 8px;
+  }
+
+  .about .about-content .timeline-box .timeline .timeline-title {
+    font-size: 16px;
+  }
+  .about .about-content .timeline-box .timeline .timeline-text {
+    font-size: 13px;
+  }
+  .about .about-content .timeline-box .timeline .timeline-location {
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  .about .about-content .personal-info .info-item p {
+    display: flex;
+  }
+  .about .about-content .personal-info .info-item p span {
+    margin-left: 10px;
+  }
+  .contact .contact-info-item,
+  .about .about-content .personal-info .info-item,
+  .about .about-content .skills .skill-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
