@@ -569,3 +569,124 @@ h3.my-profession {
   font-size: 16px;
   line-height: 25px;
 }
+
+/* portfolio */
+
+.portfolio .container {
+  padding-bottom: 40px;
+}
+
+.portfolio .portfolio-heading {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
+.portfolio .portfolio-heading h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-black-900);
+}
+
+.portfolio .portfolio-item {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  margin-bottom: 30px;
+}
+
+.portfolio .portfolio-item .portfolio-item-inner {
+  border: 6px solid var(--bg-black-100);
+  border-radius: 10px;
+  overflow: hidden;
+  /* cursor: pointer; */
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-img img {
+  width: 100%;
+  display: block;
+  min-height: 330px;
+  border-radius: 6px;
+  /* overflow: hidden; */
+}
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-hover-content {
+  position: absolute;
+  background-color: #193810;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* border-radius: 6px; */
+  left: 0px;
+  padding: 10px 10px 10px 20px;
+  overflow: hidden;
+  transition: all 2s ease;
+}
+
+.portfolio
+  .portfolio-item
+  .portfolio-item-inner
+  .portfolio-item-hover-content
+  h2 {
+  color: #bbb7b7;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0.5px;
+  cursor: default;
+  max-width: 100%;
+  max-height: 87%;
+  overflow-y: auto;
+  margin-left: -10px;
+  /* text-align: justify; */
+}
+
+.portfolio
+  .portfolio-item
+  .portfolio-item-inner
+  .portfolio-item-hover-content
+  h2
+  li {
+  margin-left: 20px;
+}
+
+.portfolio
+  .portfolio-item
+  .portfolio-item-inner:hover
+  .portfolio-item-hover-content {
+  top: 0;
+  transition: all 3s ease-in-out;
+}
+
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-hover-btn {
+  margin-top: 10px;
+  position: absolute;
+  /* left: 0; */
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.portfolio
+  .portfolio-item
+  .portfolio-item-inner
+  .portfolio-item-hover-btn
+  .btn {
+  padding: 10px 15px;
+  width: 5rem;
+}
+
+/* Customize scrollbar within .portfolio-item-hover-content */
+.portfolio
+  .portfolio-item
+  .portfolio-item-inner
+  .portfolio-item-hover-content
+  h2::-webkit-scrollbar {
+  width: 0;
+}
