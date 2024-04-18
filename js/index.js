@@ -9,7 +9,7 @@ var typed = new Typed(".typing", {
 
 // Get the aside element and navigation links
 const aside = document.getElementById('aside');
-// let navElement = document.querySelectorAll('.nav a');
+let navElement = document.querySelectorAll('.nav a');
 const mainContainer = document.getElementById('main-container');
 const nav = document.querySelector('.nav'),
     navList = nav.querySelectorAll('li'),
@@ -19,6 +19,7 @@ const nav = document.querySelector('.nav'),
 
 const menuToggle = document.getElementById('menu-toggle');
 const toggleButton = document.querySelector('.toggle-button');
+const hireMeElement = document.querySelector(".hire-me")
 
 /*==================== Toggle Button ==================== */
 
@@ -99,11 +100,40 @@ function updateNav(element) {
 }
 
 // Event listener for 'hire-me' button
-document.querySelector(".hire-me").addEventListener('click', function () {
-    const sectionIndex = this.getAttribute("data-section-index");
 
+
+hireMeElement.addEventListener('click', function () {
+    const sectionIndex = this.getAttribute("data-section-index");
     showSection(this);
     updateNav(this);
     addBackSection(sectionIndex);
     removeBackSection();
 })
+
+/*==================== Scrolling functionality to Navigate each nav link ==================== */
+
+for (let i = 0; i < navElement.length; i++) {
+    (navElement[i]).addEventListener('click', (event) => {
+        event.preventDefault();
+        // console.log(i)
+        const targetSectionId = event.target.textContent.trim().toLowerCase();
+        // console.log(targetSectionId)
+
+        const targetSection = document.getElementById(targetSectionId);
+
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' })
+            targetSection.classList.add("active");
+        }
+
+        let interval = setInterval(function () {
+            const targetSectionCoordinate = targetSection.getBoundingClientRect();
+            if (targetSectionCoordinate.top <= 0) {
+                clearInterval(interval);
+                return;
+            }
+
+            window.scrollBy(0, 50)
+        }, 50)
+    })
+}
